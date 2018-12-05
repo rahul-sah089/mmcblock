@@ -1,0 +1,40 @@
+.view {
+    background-image: url('https://mdbootstrap.com/img/Photos/Others/images/93.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.2); 
+}
+  
+.top-nav-collapse {
+    background-color: #1C2331; 
+}
+  
+
+@media only screen and (max-width: 768px) {
+    .navbar {
+        background-color: #4285F4;
+    }
+}
+
+html,
+body,
+header,
+.view {
+  height: 100%;
+}
+
+.place {
+    height:50px;
+}
+
+.button-val{
+    width:84px;
+}
+
+.place[placeholder] {
+    font-size:18px;
+    font-weight:300;
+}

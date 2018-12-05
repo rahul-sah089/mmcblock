@@ -1,0 +1,240 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<header>
+  <!-- Navbar -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+    <div class="container">
+
+      <!-- Brand -->
+      <a class="navbar-brand" href="#">
+        <strong>SCM Block</strong>
+      </a>
+
+      <!-- Collapse -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Links -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <!-- Left -->
+        <ul class="navbar-nav mr-auto smooth-scroll">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#aboutUs">About SCM</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#services">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#customers">Customers</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#learn">learn</a>
+          </li>
+        </ul>
+
+        <!-- Right -->
+        <ul class="navbar-nav nav-flex-icons">
+          <li class="nav-item">
+            <a href="https://www.facebook.com/mdbootstrap" class="nav-link" target="_blank">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="https://twitter.com/MDBootstrap" class="nav-link" target="_blank">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="" class="nav-link border border-light rounded" data-toggle="modal" data-target="#modalLRForm">
+              <i class="fa fa-user mr-2" aria-hidden="true"></i>Login/Signup
+            </a>
+          </li>
+        </ul>
+
+      </div>
+
+    </div>
+  </nav>
+  <div *ngIf="!isAuthenticated" class="view intro-2">
+    <div class="full-bg-img">
+      <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+        <div class="col-md-8 text-center white-text mx-5 wow fadeIn">
+          <h1 class="mb-4">
+            <strong>Lorem ipsum ? dolor sit amet</strong>
+          </h1>
+          <p>
+            <strong>Sed ut perspiciatis unde omnis iste natu</strong>
+          </p>
+          <p class="mb-4 d-none d-md-block">
+            <strong>Sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis
+              et quasi architecto beatae vitae dictaor.</strong>
+          </p>
+          <br>
+          <div class="col-md-12">
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <button class="btn btn-secondary btn-lg m-0 px-3 py-2 z-depth-0 dropdown-toggle ml-2" type="button" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  <i class="fa fa-home" aria-hidden="true"></i> Select Your City</button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                  <div role="separator" class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Separated link</a>
+                </div>
+              </div>
+              <div class="input-group-prepend">
+                <button class="btn btn-secondary btn-lg m-0 px-3 py-2 z-depth-0 dropdown-toggle mr-2 ml-2" type="button" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  <i class="fa fa-map-marker" aria-hidden="true"></i> Select Your Area</button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                  <div role="separator" class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Separated link</a>
+                </div>
+              </div>
+              <input type="text" class="form-control place" placeholder="Search SCM" aria-label="Recipient's username" aria-describedby="button-addon2">
+              <div class="input-group-append">
+                <button class="btn btn-md btn-secondary m-0 px-3 button-val" type="button" id="MaterialButton-addon2">
+                  <i class="fa fa-search fa-2x" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div>
+  <!--Modal: Login / Register Form-->
+
+  <!--Modal: Login / Register Form-->
+  <div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog cascading-modal" role="document" style="margin-top: 2%;">
+      <!--Content-->
+      <div class="modal-content">
+
+        <!--Modal cascading tabs-->
+        <div class="modal-c-tabs">
+
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs md-tabs tabs-2 light-blue darken-3" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab">
+                <i class="fa fa-user mr-1"></i>
+                Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#panel8" role="tab">
+                <i class="fa fa-user-plus mr-1"></i>
+                Register</a>
+            </li>
+          </ul>
+
+          <!-- Tab panels -->
+          <div class="tab-content">
+            <!--Panel 7-->
+            <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
+              <!--Body-->
+
+
+              <div id="sign-in-widget"></div>
+
+              <!--Footer-->
+              <div class="modal-footer">
+                <div class="options text-center text-md-right mt-1">
+                  <p>Not a member?
+                    <a href="#" class="blue-text">Sign Up</a>
+                  </p>
+                  <p>Forgot
+                    <a href="#" class="blue-text">Password?</a>
+                  </p>
+                </div>
+                <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
+              </div>
+
+            </div>
+            <!--/.Panel 7-->
+
+            <!--Panel 8-->
+            <div class="tab-pane fade" id="panel8" role="tabpanel">
+
+              <!--Body-->
+              <div class="modal-body">
+                <div class="md-form form-sm mb-5">
+                  <i class="fa fa-envelope prefix"></i>
+                  <input type="email" id="modalLRInput12" class="form-control form-control-sm validate">
+                  <label data-error="wrong" data-success="right" for="modalLRInput12">Your email</label>
+                </div>
+
+                <div class="md-form form-sm mb-5">
+                  <i class="fa fa-lock prefix"></i>
+                  <input type="password" id="modalLRInput13" class="form-control form-control-sm validate">
+                  <label data-error="wrong" data-success="right" for="modalLRInput13">Your password</label>
+                </div>
+
+                <div class="md-form form-sm mb-4">
+                  <i class="fa fa-lock prefix"></i>
+                  <input type="password" id="modalLRInput14" class="form-control form-control-sm validate">
+                  <label data-error="wrong" data-success="right" for="modalLRInput14">Repeat password</label>
+                </div>
+
+                <div class="text-center form-sm mt-2">
+                  <button class="btn btn-info">Sign up
+                    <i class="fa fa-sign-in ml-1"></i>
+                  </button>
+                </div>
+
+              </div>
+              <!--Footer-->
+              <div class="modal-footer">
+                <div class="options text-right">
+                  <p class="pt-1">Already have an account?
+                    <a href="#" class="blue-text">Log In</a>
+                  </p>
+                </div>
+                <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+            <!--/.Panel 8-->
+          </div>
+
+        </div>
+      </div>
+      <!--/.Content-->
+    </div>
+  </div>
+  <!--Modal: Login / Register Form-->
+
+
+
+  <!--<div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+        </div>
+        <div class="modal-body">
+          <div id="sign-in-widget"></div>
+        </div>
+        <div class="modal-footer">
+
+        </div>
+      </div>
+    </div>
+  </div>-->
+  <!--Modal: Login / Register Form-->
+</div>
+<router-outlet></router-outlet>
