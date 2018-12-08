@@ -1,17 +1,20 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Routes, RouterModule } from '@angular/router';
+
+
 import {
   OktaAuthGuard,
   OktaAuthModule,
   OktaCallbackComponent,
 } from '@okta/okta-angular';
 
+
 import sampleConfig from './.samples.config';
 
 const oktaConfig = Object.assign({
-  onAuthRequired: ({oktaAuth, router}) => {
+  onAuthRequired: ({ oktaAuth, router }) => {
     // Redirect the user to your custom login page
     router.navigate(['/login']);
   }
@@ -21,25 +24,27 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { MessagesComponent } from './messages/messages.component';
 import { ProfileComponent } from './profile/profile.component';
+import { RequestInterceptor } from './_helpers/error.interceptor';
+import { JwtInterceptor} from './_helpers/jwt.interceptor';
 
 const appRoutes: Routes = [
   {
     path: '',
-    component: HomeComponent,
+    component: HomeComponent
   },
   {
     path: 'implicit/callback',
-    component: OktaCallbackComponent,
+    component: OktaCallbackComponent
   },
   {
     path: 'profile',
     component: ProfileComponent,
-    canActivate: [ OktaAuthGuard ],
+    canActivate: [OktaAuthGuard]
   },
   {
     path: 'messages',
     component: MessagesComponent,
-    canActivate: [ OktaAuthGuard ],
+    canActivate: [OktaAuthGuard]
   },
 ];
 
@@ -56,7 +61,9 @@ const appRoutes: Routes = [
     OktaAuthModule.initAuth(oktaConfig),
     RouterModule.forRoot(appRoutes),
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+  { provide: HTTP_INTERCEPTORS, useClass: RequestInterceptor, multi: true }],
+  bootstrap: [AppComponent],
+
 })
 export class AppModule { }

@@ -7,5 +7,6 @@ export default {
   },
   resourceServer: {
     messagesUrl: 'http://localhost:3030/api/messages',
-  },
+    apiUrl:''
+  }
 };
