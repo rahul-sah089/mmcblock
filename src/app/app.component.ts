@@ -70,6 +70,9 @@ export class AppComponent {
     );
     this.isAuthenticated = await this.oktaAuth.isAuthenticated();
   }
+  login(){
+    this.oktaAuth.loginRedirect();
+  }
   logout() {
     this.oktaAuth.logout('/');
   }

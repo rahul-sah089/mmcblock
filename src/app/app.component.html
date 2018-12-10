@@ -1,6 +1,6 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
-<header>
+<header *ngIf="!isAuthenticated">
   <!-- Navbar -->
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
     <div class="container">
@@ -53,7 +53,10 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="" class="nav-link border border-light rounded" data-toggle="modal" data-target="#modalLRForm">
+            <!--<a href="" class="nav-link border border-light rounded" data-toggle="modal" data-target="#modalLRForm">
+              <i class="fa fa-user mr-2" aria-hidden="true"></i>Login/Signup
+            </a>-->
+            <a role="button" (click)="login()" class="nav-link border border-light rounded">
               <i class="fa fa-user mr-2" aria-hidden="true"></i>Login/Signup
             </a>
           </li>
@@ -118,6 +121,80 @@
     </div>
   </div>
 </header>
+<header *ngIf="isAuthenticated" style="height:17%">
+  <!-- Navbar -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark  top-nav-collapse">
+    <div class="container">
+      <!-- Brand -->
+      <a class="navbar-brand" href="#">
+        <strong>SCM Block</strong>
+      </a>
+
+      <!-- Collapse -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Links -->
+      <div class="collapse navbar-collapse" id="basicExampleNav">
+
+        <!-- Left -->
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Section 1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['messages']">Messages</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['profile']">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#learn">Section 4</a>
+          </li>
+
+        </ul>
+
+        <!-- Right -->
+        <ul class="navbar-nav nav-flex-icons">
+          <li class="nav-item">
+            <a href="https://www.facebook.com/mdbootstrap" class="nav-link" target="_blank">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="https://twitter.com/MDBootstrap" class="nav-link" target="_blank">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/contact" class="nav-link waves-effect" target="_blank">
+              <i class="fa fa-envelope"> Support</i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <!--<a class="nav-link border border-light rounded" data-toggle="modal" data-target="#modalLRForm">
+              <i class="fa fa-user mr-2" aria-hidden="true"></i>Login/Signup
+            </a>-->
+            <div class="btn-group">
+              <a class="nav-link border border-light rounded dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-user mr-2" aria-hidden="true"></i>Profile
+              </a>
+              <div class="dropdown-menu dropdown-menu-right">
+                <button class="dropdown-item" type="button">Action</button>
+                <button class="dropdown-item" type="button">Another action</button>
+                <button class="dropdown-item" type="button" (click)="logout()">Log Out</button>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+      </div>
+
+    </div>
+  </nav>
+</header>
 <div>
   <!--Modal: Login / Register Form-->
 
@@ -171,7 +248,7 @@
 
             <!--Panel 8-->
             <div class="tab-pane fade" id="panel8" role="tabpanel">
-            <!--Body-->
+              <!--Body-->
               <div class="modal-body">
                 <div class="md-form form-sm mb-5">
                   <i class="fa fa-envelope prefix"></i>
@@ -220,6 +297,68 @@
 
 
 
-  
+
 </div>
-<router-outlet></router-outlet>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+<div  class="page-footer text-center font-small mt-4 wow fadeIn" style="background-color: #1C2331;">
+  <div *ngIf="showLoadingIndicator">Loading.....</div>  
+  <!--Call to action-->
+  <div class="pt-4">
+    <a class="btn btn-outline-white" href="https://mdbootstrap.com/docs/jquery/getting-started/download/" target="_blank" role="button">Download MDB
+      <i class="fa fa-download ml-2"></i>
+    </a>
+    <a class="btn btn-outline-white" href="https://mdbootstrap.com/education/bootstrap/" target="_blank" role="button">Start free tutorial
+      <i class="fa fa-graduation-cap ml-2"></i>
+    </a>
+  </div>
+  <!--/.Call to action-->
+
+  <hr class="my-4">
+
+  <!-- Social icons -->
+  <div class="pb-4">
+    <a href="https://www.facebook.com/mdbootstrap" target="_blank">
+      <i class="fa fa-facebook mr-3"></i>
+    </a>
+
+    <a href="https://twitter.com/MDBootstrap" target="_blank">
+      <i class="fa fa-twitter mr-3"></i>
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=7MUISDJ5ZZ4" target="_blank">
+      <i class="fa fa-youtube mr-3"></i>
+    </a>
+
+    <a href="https://plus.google.com/u/0/b/107863090883699620484" target="_blank">
+      <i class="fa fa-google-plus mr-3"></i>
+    </a>
+
+    <a href="https://dribbble.com/mdbootstrap" target="_blank">
+      <i class="fa fa-dribbble mr-3"></i>
+    </a>
+
+    <a href="https://pinterest.com/mdbootstrap" target="_blank">
+      <i class="fa fa-pinterest mr-3"></i>
+    </a>
+
+    <a href="https://github.com/mdbootstrap/bootstrap-material-design" target="_blank">
+      <i class="fa fa-github mr-3"></i>
+    </a>
+
+    <a href="http://codepen.io/mdbootstrap/" target="_blank">
+      <i class="fa fa-codepen mr-3"></i>
+    </a>
+  </div>
+  <!-- Social icons -->
+
+  <!--Copyright-->
+  <div class="footer-copyright py-3">
+    © 2018 Copyright:<a *ngIf="showLoadingIndicator">Loading.....</a>
+    <a href="https://mdbootstrap.com/education/bootstrap/" target="_blank"> MDBootstrap.com </a>
+  </div>
+  <!--/.Copyright-->
+
+</div>
+<!--/.Footer-->
